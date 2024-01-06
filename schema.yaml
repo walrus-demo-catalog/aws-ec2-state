@@ -1,0 +1,28 @@
+openapi: 3.0.3
+info:
+  title: OpenAPI schema for template aws-ec2-state
+components:
+  schemas:
+    variables:
+      type: object
+      required:
+      - instance_id
+      properties:
+        instance_id:
+          title: Instance Id
+          type: string
+          description: The instance id of the EC2 instance
+          x-walrus-ui:
+            order: 1
+        instance_state:
+          title: Instance State
+          type: string
+          description: The instance state of the EC2 instance you wan to set, Valid
+            values are stopped, running.
+          default: running
+          enum:
+          - running
+          - stopped
+          nullable: true
+          x-walrus-ui:
+            order: 2
